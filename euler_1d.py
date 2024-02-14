@@ -116,7 +116,7 @@ while time <= 0.2:
     print(time)
 
 prim_var = cons_to_prim_vars(cons_var)
-analytical = np.loadtxt('/mnt/external_data/maruthi/my_codes/compressible_euler_1d/output/shock_tube.dat')
+analytical = np.loadtxt('./data/shock_tube.dat', dtype=float, delimiter=",")
 plt.plot(x_grid, prim_var[:, 0], label='LLF')
 plt.plot(analytical[:, 0], analytical[:, 1], label='Analytical')
 plt.xlabel('x', fontsize=16)
@@ -124,3 +124,4 @@ plt.ylabel(r'$\rho $', fontsize=16)
 plt.legend(fontsize=16)
 plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
+plt.savefig("shock_tupe.png")
